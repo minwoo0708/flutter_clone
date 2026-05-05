@@ -1,23 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp( App());
-}
+class MyWidget extends StatelessWidget {
+  const MyWidget({super.key});
 
-class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('hello fluter'),
-        ),
-        body: Center(
-          child: Text('hello world'),
-        ),
-      ),
-    );
+    return const Placeholder();
   }
-
 }
-
