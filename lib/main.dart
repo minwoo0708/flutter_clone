@@ -1,17 +1,25 @@
 import 'package:flutter/material.dart';
 
-class MyWidget extends StatefulWidget {
-  const MyWidget({super.key});
-
-  @override
-  State<MyWidget> createState() => _MyWidgetState();
+void main() {
+  runApp(const App());
 }
 
-int counter = 0;
+class App extends StatefulWidget {
+  const App({super.key});
 
-void onClicked() {}
+  @override
+  State<App> createState() => _AppState();
+}
 
-class _MyWidgetState extends State<MyWidget> {
+class _AppState extends State<App> {
+  int counter = 0;
+
+  void onClicked() {
+    setState(() {
+      counter = counter + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,12 +27,14 @@ class _MyWidgetState extends State<MyWidget> {
         backgroundColor: Colors.white,
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Click count', style: TextStyle(fontSize: 30)),
               Text('$counter', style: const TextStyle(fontSize: 30)),
-              const IconButton(
+              IconButton(
+                iconSize: 50,
                 onPressed: onClicked,
-                icon: Icon(Icons.add_box_rounded),
+                icon: const Icon(Icons.add_box_rounded),
               ),
             ],
           ),
